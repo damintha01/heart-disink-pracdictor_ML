@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Disease Risk Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <h1>Heart Disease Risk Level Predictor</h1>
+        <p class="description">Please fill this form with your correct and true details for an accurate risk assessment</p>
+
+        <form action="{{ url_for('getrusults') }}" method="POST">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required/>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <input type="text" id="gender" name="gender" required/>
+                <div class="form-info">Enter 1 for Male, 2 for Female</div>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" required/>
+            </div>
+
+            <div class="form-group">
+                <label for="tc">Total Cholesterol (TC)</label>
+                <input type="number" id="tc" name="tc" required/>
+                <div class="form-info">Enter value in mg/dL</div>
+            </div>
+
+            <div class="form-group">
+                <label for="hdl">HDL Cholesterol</label>
+                <input type="number" id="hdl" name="hdl" required/>
+                <div class="form-info">Enter value in mg/dL</div>
+            </div>
+
+            <div class="form-group">
+                <label for="sbp">Systolic Blood Pressure (SBP)</label>
+                <input type="number" id="sbp" name="sbp" required/>
+                <div class="form-info">Enter value in mm Hg</div>
+            </div>
+
+            <div class="form-group">
+                <label for="smoke">Smoking Status</label>
+                <input type="text" id="smoke" name="smoke" required/>
+                <div class="form-info">Enter 1 if you smoke, 0 if you don't</div>
+            </div>
+
+            <div class="form-group">
+                <label for="bpm">Blood Pressure Medication</label>
+                <input type="text" id="bpm" name="bpm" required/>
+                <div class="form-info">Enter 1 if you take medication, 2 if you don't</div>
+            </div>
+
+            <div class="form-group">
+                <label for="diab">Diabetes Status</label>
+                <input type="text" id="diab" name="diab" required/>
+                <div class="form-info">Enter 1 if you have diabetes, 0 if you don't</div>
+            </div>
+
+            <button type="submit" class="submit-btn">Calculate Risk Level</button>
+        </form>
+    </div>
+</body>
+</html>

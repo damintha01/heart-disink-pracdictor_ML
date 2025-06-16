@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Risk Assessment Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <div class="result-card">
+            <h1>Heart Disease Risk Assessment</h1>
+            <div class="result-name">{{results.name}}</div>
+            <div class="risk-level">{{results.risk}}% Risk Level</div>
+            <a href="{{ url_for('index') }}" class="back-link">← Back to Assessment Form</a>
+        </div>
+    </div>
+</body>
+</html>
